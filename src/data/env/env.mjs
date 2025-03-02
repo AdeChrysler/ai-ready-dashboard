@@ -29,6 +29,7 @@ export const env = createEnv({
    */
   client: {
     NEXT_PUBLIC_APP_URL: z.string().url().optional(),
+    NEXT_PUBLIC_AUTH0_DOMAIN: z.string().min(1),
     NEXT_PUBLIC_GOOGLE_ANALYTICS: optionalString,
   },
 
@@ -40,6 +41,10 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
+    AUTH0_SECRET: z.string().min(32),
+    AUTH0_BASE_URL: z.string().url(),
+    AUTH0_CLIENT_ID: z.string().min(1),
+    AUTH0_CLIENT_SECRET: z.string().min(1),
     /**
      * Add your server env here.
      * For example:
@@ -70,9 +75,14 @@ export const env = createEnv({
   runtimeEnv: {
     /** Client */
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NEXT_PUBLIC_AUTH0_DOMAIN: process.env.NEXT_PUBLIC_AUTH0_DOMAIN,
     NEXT_PUBLIC_GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
 
     /** Server */
+    AUTH0_SECRET: process.env.AUTH0_SECRET,
+    AUTH0_BASE_URL: process.env.AUTH0_BASE_URL,
+    AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
+    AUTH0_CLIENT_SECRET: process.env.AUTH0_CLIENT_SECRET,
     /**
      * Add your server env here.
      * For example:

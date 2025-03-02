@@ -39,69 +39,20 @@ const features = [
   },
 ]
 
-const Features = () => {
+export default function Features() {
   return (
-    <section
-      id="features"
-      className={cn(
-        'container space-y-6 rounded-md bg-secondary py-8',
-        'md:py-12',
-        'lg:py-24',
-      )}
-    >
-      <div
-        className={cn(
-          'mx-auto flex max-w-4xl flex-col items-center space-y-4 text-center',
-        )}
-      >
-        <h2
-          className={cn(
-            'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-400 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent drop-shadow-sm',
-            'dark:from-gray-100 dark:to-gray-800',
-            'md:text-6xl md:leading-tight',
-          )}
-        >
-          Features
-        </h2>
-        <p
-          className={cn(
-            'max-w-[85%] leading-normal text-muted-foreground',
-            'sm:text-lg',
-            'sm:leading-7',
-          )}
-        >
-          <Balancer>
-            This template provides features like API routes, SEO, Jest, and more
-            in Next.js 13 app dir.
-          </Balancer>
-        </p>
-      </div>
-      <div
-        className={cn(
-          'grid justify-center gap-4',
-          'sm:grid-cols-2',
-          'md:grid-cols-3',
-        )}
-      >
-        {features.map((feature) => (
-          <Card
-            key={feature.title}
-            className={cn(
-              'flex h-[180px] flex-col justify-between rounded-md p-6',
-            )}
-          >
-            <feature.icon className={cn('h-12 w-12')} />
-            <div className={cn('space-y-2')}>
-              <h3 className="font-bold">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">
-                {feature.description}
-              </p>
-            </div>
-          </Card>
-        ))}
+    <section className="py-20 bg-gray-900">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
+            Pakai AI Agent{' '}
+            <span className="text-blue-400">Untuk Bisnis anda</span>
+          </h2>
+          <p className="text-gray-400 text-lg">
+            Hemat Waktu dan Biaya CS Sampai Puluhan Juta
+          </p>
+        </div>
       </div>
     </section>
   )
 }
-
-export default Features
